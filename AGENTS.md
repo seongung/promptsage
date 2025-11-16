@@ -40,3 +40,12 @@ This repository is intended for building and iterating on prompt- and agent-rela
 
 - When adding agent behavior or prompts, keep them modular (one concern per file) and document assumptions at the top of the file.
 - Prefer configuration-driven behavior (JSON/YAML/TS config) over hard‑coded values to simplify experimentation.
+
+## Active Technologies
+- Rust (stable, 1.79+) + ratatui, crossterm, tokio, clap, serde, serde_json, anyhow, glob, dirs (001-prompt-sage-tui)
+- Local filesystem JSONL logs (`~/.claude/projects/**.jsonl`, `~/.codex/sessions/**.jsonl`) (001-prompt-sage-tui)
+- Rust 1.79+ (existing repo language) + Existing Prompt Sage dependencies (tokio, ratatui, etc.); spike-specific crates (`glob`, `which`, etc.) must be evaluated for removal. (002-remove-spike)
+- N/A (code cleanup only). (002-remove-spike)
+
+## Recent Changes
+- 001-prompt-sage-tui: Added Rust (stable, 1.79+) + ratatui, crossterm, tokio, clap, serde, serde_json, anyhow, glob, dirs

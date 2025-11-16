@@ -1,0 +1,23 @@
+[package]
+name = "promptsage"
+version = "0.1.0"
+edition = "2021"
+description = "Prompt Sage TUI – local prompt history review tooling for Claude and Codex logs."
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/victor/promptsage"
+
+[dependencies]
+arboard = "3"
+anyhow = "1"
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4", features = ["derive"] }
+crossterm = "0.27"
+dirs = "5"
+glob = "0.3"
+ratatui = { version = "0.27", default-features = false, features = ["crossterm"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+toml = "0.8"
+which = "6"

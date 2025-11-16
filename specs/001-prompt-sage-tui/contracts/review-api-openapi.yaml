@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: Prompt Sage Review Contract
+  version: 0.1.0
+  description: >
+    Internal contract for "Prompt Review Coach" responses used by Prompt Sage TUI when
+    invoking external AI CLIs (Claude, Codex). This describes the JSON shape returned
+    on stdout; it is not a network API.
+paths: {}
+components:
+  schemas:
+    PromptReviewResponse:
+      type: object
+      required:
+        - improved_prompt
+        - explanation
+      properties:
+        improved_prompt:
+          type: string
+          description: Improved prompt text the user can reuse.
+        explanation:
+          type: string
+          description: Short explanation of changes, understandable to non-native English speakers.
+        score:
+          type: integer
+          format: int32
+          minimum: 0
+          maximum: 100
+          description: Optional quality score for the improved prompt.
+        tags:
+          type: array
+          items:
+            type: string
+          description: Optional labels such as "clarity", "structure", "safety".
+        metadata:
+          type: object
+          additionalProperties: true
+          description: Provider-specific metadata (e.g., model name, token counts).

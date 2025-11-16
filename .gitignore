@@ -1,0 +1,29 @@
+# Build artifacts
+/target/
+/debug/
+/release/
+
+# Rust intermediates
+*.rs.bk
+*.rlib
+*.prof*
+
+# IDEs and tooling
+.idea/
+.vscode/
+*.iml
+
+# Logs and env
+*.log
+.env
+.env.*
+.codex/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+
+# Added by cargo
+
+/target

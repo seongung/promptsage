@@ -31,7 +31,15 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Planned work MUST satisfy the project constitution, at minimum:
+
+- Transcript parsing for Claude Code and OpenAI Codex remains correct, deterministic, and fully tested with representative transcripts.
+- No feature introduces unintended code execution; all commands and code paths are read-only by default or gated behind explicit confirmation flows.
+- Prompt instructions become clearer and more specific, with explicit output contracts wherever models are involved.
+- Changes preserve portability (macOS and Linux first; Windows supported via WSL for Codex workflows) without introducing hard platform dependencies.
+- Long-running operations run in background workers or asynchronous flows so the TUI remains responsive to user input.
+- Privacy is protected via redaction options and safe logging; no secrets or highly sensitive content are added to telemetry.
+- Observability is maintained or improved through structured logs and feature flags for new or risky behavior.
 
 ## Project Structure
 
