@@ -18,6 +18,10 @@ const CONFIG_DIR: &str = "prompt-sage";
 const DEFAULT_CLAUDE_ROOT: &str = "~/.claude/projects";
 const DEFAULT_CODEX_ROOT: &str = "~/.codex/sessions";
 
+/// Global feature flag to temporarily disable
+/// auto bulk review behaviour in the TUI.
+pub const AUTO_REVIEW_FEATURE_ENABLED: bool = false;
+
 #[allow(dead_code)]
 #[derive(Debug, Clone)]
 pub struct AppConfig {
@@ -310,7 +314,7 @@ impl Default for RawAutoReview {
 impl AutoReviewConfig {
     fn from_raw(raw: RawAutoReview) -> Self {
         AutoReviewConfig {
-            enabled: raw.enabled,
+            enabled: raw.enabled && AUTO_REVIEW_FEATURE_ENABLED,
             batch_size: raw.batch_size.max(1),
             overlay: raw.overlay,
             last_completed_ids: raw.last_completed_ids,
@@ -428,7 +432,7 @@ pub struct AutoReviewConfig {
 impl Default for AutoReviewConfig {
     fn default() -> Self {
         AutoReviewConfig {
-            enabled: true,
+            enabled: AUTO_REVIEW_FEATURE_ENABLED,
             batch_size: default_batch_size(),
             overlay: OverlayMode::Auto,
             last_completed_ids: Vec::new(),
