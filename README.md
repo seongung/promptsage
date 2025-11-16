@@ -2,7 +2,7 @@
 
 Prompt Sage is a terminal user interface for exploring, filtering, and reviewing prompts from local Claude / Codex transcript logs.
 
-![Prompt Sage TUI screenshot](assets/prompt-sage-tui.png)
+<img width="1512" height="982" alt="image" src="https://github.com/user-attachments/assets/9328e075-a6df-42d5-8f11-e7416b2b97b7" />
 
 The screenshot above shows the main workflow:
 
